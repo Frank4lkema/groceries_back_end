@@ -7,6 +7,11 @@ class GroceriesController < ApplicationController
     json_response(@groceries)
   end
 
+  def create
+    @grocery = Grocery.create!(grocery_params)
+    json_response(@grocery, :created)
+  end
+
   def show
     @grocery = Grocery.find(params[:id])
     json_response(@grocery)
@@ -15,5 +20,11 @@ class GroceriesController < ApplicationController
   def destroy
     @grocery = Grocery.find(params[:id])
     head :no_content if @grocery.destroy
+  end
+
+  private
+
+  def grocery_params
+    params.permit(:date)
   end
 end

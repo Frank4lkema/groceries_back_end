@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Grocery < ApplicationRecord
+class List < ApplicationRecord
   # Associations
   has_many :products, dependent: :destroy
 

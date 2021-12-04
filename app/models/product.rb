@@ -2,7 +2,7 @@
 
 class Product < ApplicationRecord
   # Associations
-  belongs_to :grocery, required: true
+  belongs_to :list, required: true
 
   # Validations
   validates :name, presence: true

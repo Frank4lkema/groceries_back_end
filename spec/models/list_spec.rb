@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Grocery, type: :model do
+RSpec.describe List, type: :model do
   context 'associations' do
     it { should have_many(:products).dependent(:destroy) }
   end

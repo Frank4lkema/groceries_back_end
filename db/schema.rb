@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_130149) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "groceries", force: :cascade do |t|
+  create_table "lists", force: :cascade do |t|
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 2021_12_04_130149) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.boolean "done", default: false
-    t.bigint "grocery_id", null: false
+    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["grocery_id"], name: "index_products_on_grocery_id"
+    t.index ["list_id"], name: "index_products_on_list_id"
   end
 
-  add_foreign_key "products", "groceries"
+  add_foreign_key "products", "lists"
 end

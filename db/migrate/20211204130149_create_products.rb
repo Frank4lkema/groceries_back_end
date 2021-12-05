@@ -4,8 +4,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
   def change
     create_table :products do |t|
       t.string :name
-      t.boolean :done, default: false
-      t.references :list, null: false, foreign_key: true
+      t.boolean :standard, default: false
 
       t.timestamps
     end

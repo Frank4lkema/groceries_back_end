@@ -2,7 +2,7 @@
 
 class List < ApplicationRecord
   # Associations
-  has_many :products, dependent: :destroy
+  has_many :list_products, dependent: :destroy
 
   # Validations
   validates :date, presence: true

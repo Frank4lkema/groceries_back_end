@@ -2,8 +2,9 @@
 
 class Product < ApplicationRecord
   # Associations
-  belongs_to :list, required: true
+  has_many :list_products
 
   # Validations
   validates :name, presence: true
+  validates :standard, presence: true
 end

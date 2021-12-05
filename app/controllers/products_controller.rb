@@ -6,6 +6,11 @@ class ProductsController < ApplicationController
     json_response(@product, :created)
   end
 
+  def update
+    @product = Product.find(params[:id])
+    head :no_content if @product.update!(product_params)
+  end
+
   def destroy
     @product = Product.find(params[:id])
     head :no_content if @product.destroy

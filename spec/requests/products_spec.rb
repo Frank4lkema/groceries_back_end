@@ -35,6 +35,19 @@ RSpec.describe 'Products API', type: :request do
       end
     end
   end
+
+  describe 'PUT /products/:id' do
+    context 'when the record exists' do
+      before { put "/products/#{product_id}", params: { name: 'Nutella' } }
+      it 'update the record' do
+        expect(response.body).to be_empty
+      end
+      it 'return status code 204' do
+        expect(response).to have_http_status(204)
+      end
+    end
+  end
+
   describe 'DELETE /products/:id' do
     before { delete "/products/#{product_id}" }
 

@@ -6,5 +6,4 @@ class Product < ApplicationRecord
 
   # Validations
   validates :name, presence: true
-  validates :standard, presence: true
 end

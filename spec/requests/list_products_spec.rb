@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'List products API', type: :request do
   let(:list) { create(:list) }
-  let(:product) {create(:product)}
-  let!(:product_list) { create(:list_product, list: list, product: product)}
+  let(:product) { create(:product) }
+  let!(:product_list) { create(:list_product, list: list, product: product, amount: 1) }
 
   # Test suite for GET /list_products/:id
   describe 'GET /lists/:id/products' do
